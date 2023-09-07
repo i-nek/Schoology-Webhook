@@ -1,20 +1,19 @@
 const APIController = (function() {
-    const DOMAIN         = 'https://lms.lausd.net';
+    const DOMAIN         = '';
     const consumerId     = '';
-    const consumerSecret = ''
+    const consumerSecret = '';
 
     const _getToken = async () => {
-        const result = await fetch(DOMAIN + '/oauth/authorize', {
+        const result = await fetch('https://lms.lausd.net/oauth/request_token', {
             method: 'POST',
             headers: {
                 'Authorization': 'Basic ' + btoa(consumerId + ':' + consumerSecret),
-                'Host': 'api.schoology.com',
-                'Content-Type': 'application/json'
+                'Host': 'lms.lausd.net',
+                'Content-Type': 'application/json',
             },
-            body: 'grant_type=client_credentials'
         });
-
-        const data = await result.json();
-        return data.access_token;
+        const data = await result.parse();
+        return data;
     }
-})(APIController);
+    console.log(_getToken());
+})();
