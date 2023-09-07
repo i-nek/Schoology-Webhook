@@ -8,8 +8,8 @@ const APIController = (function() {
             method: 'POST',
             headers: {
                 'Authorization': 'Basic ' + btoa(consumerId + ':' + consumerSecret),
-                'Host': domain,
-                'Content-Type': 'application/json'
+                'Host': 'domain',
+                'Content-Type': 'application/x-www-form-urlencoded'
             },
             body: 'grant_type=client_credentials'
         });
@@ -17,5 +17,5 @@ const APIController = (function() {
         const data = await result.json();
         return data;
     }
-    console.log(_getToken());
+    console.log('OAuth Token: ' + _getToken());
 })();
