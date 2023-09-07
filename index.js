@@ -1,5 +1,5 @@
 const APIController = (function() {
-    const domain         = 'https://lms.lausd.net';
+    const domain         = 'lausdschoology.azurewebsites.net/?&domain=lms.lausd.net';
     const consumerId     = 'efe5a543948026772946115c316323cd05e443b00';
     const consumerSecret = 'e9dc645bf33230645546a37fc9d80348'
 
@@ -8,10 +8,10 @@ const APIController = (function() {
             method: 'POST',
             headers: {
                 'Authorization': 'Basic ' + btoa(consumerId + ':' + consumerSecret),
-                'Host': 'domain',
+                'Host': domain,
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: 'grant_type=client_credentials'
+            body: 'grant_type=authorization_code'
         });
 
         const data = await result.json();
