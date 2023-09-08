@@ -27,7 +27,7 @@ async function _getToken() {
         if (error) {
           console.error('Error getting request token:', error);
         } 
-        return result.body();
+        return result.body;
     }); 
 }
 
