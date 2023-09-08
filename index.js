@@ -25,7 +25,7 @@ const APIController = (async () => {
 })();
 
 async function _getToken() {
-    const result = await oa.getOAuthRequestToken((error, oauthToken, oauthTokenSecret) => {
+    const result = oa.getOAuthRequestToken((error, oauthToken, oauthTokenSecret) => {
         if (error) {
           console.error('Error getting request token:', error);
         } 
@@ -37,6 +37,7 @@ async function _getToken() {
 // OAuth2 //
 /*
 const APIController = (function() {
+<<<<<<< HEAD
     const DOMAIN         = '';
     const consumerId     = '';
     const consumerSecret = '';
@@ -63,3 +64,25 @@ const APIController = (function() {
 
 
 
+=======
+    const domain         = 'lausdschoology.azurewebsites.net/?&domain=lms.lausd.net';
+    const consumerId     = 'efe5a543948026772946115c316323cd05e443b00';
+    const consumerSecret = 'e9dc645bf33230645546a37fc9d80348'
+
+    const _getToken = async () => {
+        const result = await fetch('https://api.schoology.com/oauth/request_token', {
+            method: 'POST',
+            headers: {
+                'Authorization': 'Basic ' + btoa(consumerId + ':' + consumerSecret),
+                'Host': domain,
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'grant_type=authorization_code'
+        });
+
+        const data = await result.json();
+        return data;
+    }
+    console.log('OAuth Token: ' + _getToken());
+})();
+>>>>>>> f913c70f0a9cb4e8cd0ec123ee628bff3f405066
