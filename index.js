@@ -1,5 +1,3 @@
-const { OAuth2 } = require('oauth');
-
 const OAuth = require('oauth').OAuth;
 const webhookURL = 'https://discord.com/api/webhooks/1148797633729663199/WOcIZNmwX31KgBkeZB8eEZ-SwoURjRJngsXIyIDhTNsedV86hj3srCBpfiokcoESe503';
 
