@@ -7,8 +7,9 @@ const consumerSecret = 'e9dc645bf33230645546a37fc9d80348';
 const callback_url = 'your_callback_url';
 
 const oa = new OAuth(
-    requestTokenUrl = 'https://api.schoology.com/oauth/access_token',
-    accessTokenUrl = 'https://api.schoology.com/oauth/authorize',
+    requestTokenUrl = 'https://api.schoology.com/oauth/request_token',
+    accessTokenUrl = 'https://api.schoology.com/oauth/access_token',
+    authorizeTokenUrl = 'https://api.schoology.com/oauth/authorize',
     consumerKey,
     consumerSecret,
     '1.0A',
